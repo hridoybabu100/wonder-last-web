@@ -1,6 +1,7 @@
 'use client'
 import { Button, FieldError, Input, Label, ListBox, TextArea, TextField } from "@heroui/react";
 import { Select } from "@heroui/react";
+import { redirect } from "next/navigation";
 
 
 const AdminPage = () => {
@@ -22,7 +23,11 @@ const AdminPage = () => {
         })
 
         const data = await res.json();
-        console.log("data", data);
+        // console.log("data", data);
+        if (data.ok){
+          alert("Travel Book Now Suceessfull")
+          redirect('/destination')
+        }
         
         
         
